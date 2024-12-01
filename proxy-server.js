@@ -58,9 +58,9 @@ const server = http.createServer((req, res) => {
             
             try {
                 const jsonBody = JSON.parse(body);
-                res.end(JSON.stringify(body));
+                res.end(jsonBody);
             } catch (e) {
-                res.end(JSON.stringify(body));
+                res.end(body);
             }
             console.log('===========================\n');
         });
