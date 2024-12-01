@@ -1,0 +1,12 @@
+{
+  "name": "dynamic-proxy-server",
+  "version": "1.0.0",
+  "description": "Simple NodeJS Proxy Server to make the Roboter Arm Waveshare Roarm M2-S accessable for Browser Applications without CORS Issues",
+  "main": "proxy-server.js",
+  "scripts": {
+    "start": "node proxy-server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
