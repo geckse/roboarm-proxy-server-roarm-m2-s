@@ -58,9 +58,25 @@ const server = http.createServer((req, res) => {
             
             try {
                 const jsonBody = JSON.parse(body);
-                res.end(jsonBody);
+                if(jsonBody == null){
+                    res.writeHead(200);
+                    res.end(JSON.stringify({
+                        state: 'null response from robot arm. Can be good or bad.',
+                    }));
+                } else{
+                    res.end(jsonBody);
+                }
             } catch (e) {
-                res.end(body);
+
+                if(body == "null"){
+                    // send 400
+                    res.writeHead(200);
+                    res.end(JSON.stringify({
+                        state: 'null response from robot arm. Can be good or bad.',
+                    }));
+                } else{
+                    res.end(body);
+                }
             }
             console.log('===========================\n');
         });
